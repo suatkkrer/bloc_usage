@@ -37,9 +37,13 @@ class MainPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "0",
-              style: TextStyle(fontSize: 36),
+            BlocBuilder<CounterCubit, int>(
+              builder: (context, counter) {
+                return Text(
+                  "$counter",
+                  style: TextStyle(fontSize: 36),
+                );
+              },
             ),
             RaisedButton(
               onPressed: () {
